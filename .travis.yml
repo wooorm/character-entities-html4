@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- '0.10'
+- '0.11'
+- '0.12'
+- '4.0'
+- '5.0'
+- iojs
+after_script: npm install codecov.io && cat ./coverage/lcov.info | codecov
+deploy:
+  provider: releases
+  api_key:
+    secure: dW3rd8PaW2+wDdGmcoYkvrd/at0lWw4plbk6tRawT8lb3+0d40Q/uS7Yifmou6gQQxW6HGI7tClNiboauCmYRFl2LTniHKEfP9y1iBvLySpzh+YIyLcSuWkf0am3c6fLn2yhYMb/y+9oZRJFkGmDXJxR/6tzx/IpJjpq50voo+FNQbfQivvI7KOZqqf1WuouniwumTjmAmGYWFVi4hiIfZksGx4sPEHM4Sn581J2oEaaxhqSi8DWzQY+mIbj8ROO6xojOi31C8XWfVr63OCvZeRt0AVWw+tnaO3Gn/KDztDQCQXvF2ZcpF22MeEiQAv7rOgoy0EAInJvWQd2zpfuqMEpV5dRfVZeeXvHuSLlV2Oj13blJfOFDjCFxo5Ze9D+zztq9SttjxEFugBnYlz0oPTz9OGiDp8NbRIXZFADcA6vbnYzh4gG0HYFT0GSkvs9bTrcVh8TPt7clzOIP9Xqtk8Zf423MfWKj0erNSnQpQJbG7B6xxIpcxbmv2eSxgUhyW/8MdELM9fK9lKSYo+T9lv+wSIS5f+zaa9dLUsoEHp+P3Li4LyHoxB/3ygLYt1HhPko5bJrw99QHyrW4ZuRj/XsBbaZSvg4wWyNX5ygTaLXm/6lXRGgPGWqnGhji8FsyXIZjlBJriZAI+EJtLJU7pVokHdE02fDWjMPZefJ0wY=
+  file:
+    - "character-entities-html4.js"
+    - "character-entities-html4.min.js"
+  on:
+    tags: true

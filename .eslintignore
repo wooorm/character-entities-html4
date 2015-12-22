@@ -1,0 +1,6 @@
+build/
+components/
+coverage/
+build.js
+character-entities-html4.js
+character-entities-html4.min.js
