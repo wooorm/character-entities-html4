@@ -1,18 +1,25 @@
 language: node_js
 node_js:
-- '0.10'
 - '0.11'
 - '0.12'
 - '4.0'
 - '5.0'
-- iojs
-after_script: npm install codecov.io && cat ./coverage/lcov.info | codecov
+- '6.0'
+after_success: bash <(curl -s https://codecov.io/bash)
 deploy:
-  provider: releases
-  api_key:
-    secure: dW3rd8PaW2+wDdGmcoYkvrd/at0lWw4plbk6tRawT8lb3+0d40Q/uS7Yifmou6gQQxW6HGI7tClNiboauCmYRFl2LTniHKEfP9y1iBvLySpzh+YIyLcSuWkf0am3c6fLn2yhYMb/y+9oZRJFkGmDXJxR/6tzx/IpJjpq50voo+FNQbfQivvI7KOZqqf1WuouniwumTjmAmGYWFVi4hiIfZksGx4sPEHM4Sn581J2oEaaxhqSi8DWzQY+mIbj8ROO6xojOi31C8XWfVr63OCvZeRt0AVWw+tnaO3Gn/KDztDQCQXvF2ZcpF22MeEiQAv7rOgoy0EAInJvWQd2zpfuqMEpV5dRfVZeeXvHuSLlV2Oj13blJfOFDjCFxo5Ze9D+zztq9SttjxEFugBnYlz0oPTz9OGiDp8NbRIXZFADcA6vbnYzh4gG0HYFT0GSkvs9bTrcVh8TPt7clzOIP9Xqtk8Zf423MfWKj0erNSnQpQJbG7B6xxIpcxbmv2eSxgUhyW/8MdELM9fK9lKSYo+T9lv+wSIS5f+zaa9dLUsoEHp+P3Li4LyHoxB/3ygLYt1HhPko5bJrw99QHyrW4ZuRj/XsBbaZSvg4wWyNX5ygTaLXm/6lXRGgPGWqnGhji8FsyXIZjlBJriZAI+EJtLJU7pVokHdE02fDWjMPZefJ0wY=
-  file:
-    - "character-entities-html4.js"
-    - "character-entities-html4.min.js"
-  on:
-    tags: true
+  - provider: npm
+    email: tituswormer@gmail.com
+    api_key:
+      secure: d1E4NgktRTQpxJUrOdEEx2ueVF9OY8AhNs2fiAsIx9xgHykLrwa7Z/zK3UaW6X8ia9sQS6+i6JQF6qLD1F5i/G/PrKof95n5pa6Basygg59vqJ+lu3QpD/9bGngkZ/c/AGOjjT1Q2QYKoXWQgNj7sNwxnj7jhB6RrlzSsCuHy3R+Ve2lcRromyq1WvkWzcrzKsoEfrh63aEh5RuhJxW0+tcGa9G0rqPucBcs54U9rF00pd2MduXelylJBUZBeiydJCO8kB3p3aQFRTtvqMocsQgOqIQrOtLH64hgfZzIyf/ppWcyQAD3tRTd0KTggNLGYspKWwhVHb/lAIllpE20wsQpRI2uJoEfzBTEobkTCtMWjY93kGWLQjS3ickcNk6Sf/MrNVeaCvBty5NFJ6R2oCpcLRt5OKwZIbfTBHcrH6p/hfDRThYet/KALPZdwB4MFpjTX5/uBpKa5nfml7Tu/+eU7nCHowW1XOZq69KGJ3PaHMTkbKHb58yq4buw4VcbeqKnZwI/sMqV3U9ZasrJ6rfdki+MEzdFayYcFhtPzzHw7OchDj9IVhF1B938G9/MfCmRH/ss6wYYf8y2rSSFTEwLq94zV4cO5qFl5ohu8+AbRQFgYt3EboJGoHQwTXq1Gd3ks4HPE+7TwfUNBFyrcd0nsiCbDLAvq6Po4Ouc+YQ=
+    on:
+      tags: true
+      node: '5.0'
+  - provider: releases
+    api_key:
+      secure: cSCQnjrAwsI4G/z40uE0nLHqiepZW4yguLsDBFUhGHmnl9RCmT9Hax7dEYE/WAN1Fw7gdnpDxDzXh9SsTF4f56/UmSyCjbr9EkpX//E08rrHDbqUNsNalBasmq3UdxGnP/mQBGQXLEntofmiMtAtMZpSBFlS5tAGfoB/f4L6V0KPivV3wv1+lDmt6uqsJIoivB1sGaCCbjbA8pK4tDwW4pcSFtEmnnnpzl6S6fgCu6Scd849YEVb3+diLuFG7f8aDZLjb7gvXJroI6VKKdYa4cVC70WMa+cSn5BZ59XrI5y2zOX5uIfJSSBx2fz+8Ji3F2Tyd12BgFtRJEpZTiP2SC8YS1SzM/28QgnpgytYfwk6id5JCRoTLVv6QOAMU1bk9wiq2YpFQK5JLrT8sZqBFNlXmi8mfNKZQyAkFGMsL1aNIAH5wG6GFdJwb8Tnglndnct+jScNxVy9A/5rdSHrSCTz7KwN72aJQ333idKO83nR/PghaTecEryQrcsUmKtIwc7XH344DkqXrImimQktgVNoT2kJlMfzC8pLtDgUuz/iAMgxwuFyVcy6dQuDxFNuH5dsrSbqTFE0C0HDzoVLxBULltxe0sI1zeXa1KY4fgJRaHwbjwCfbs9jVQrN7mPl/zyozX4ZnpV+JTzB+mwBf2pS/tOBRY82KWZNfboCXxE=
+    file:
+      - "character-entities-html4.js"
+      - "character-entities-html4.min.js"
+    on:
+      tags: true
+      node: '6.0'

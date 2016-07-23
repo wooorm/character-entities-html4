@@ -1,10 +1,8 @@
 .DS_Store
 *.log
-build/
-components/
+.nyc_output/
 coverage/
 data/
 node_modules/
-build.js
 character-entities-html4.js
 character-entities-html4.min.js
