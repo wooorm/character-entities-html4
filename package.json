@@ -25,7 +25,9 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "bail": "^1.0.1",
     "browserify": "^13.0.1",
+    "concat-stream": "^1.5.2",
     "esmangle": "^1.0.1",
     "nyc": "^8.0.0",
     "remark-cli": "^2.0.0",
@@ -35,11 +37,10 @@
   },
   "scripts": {
     "build-md": "remark . --quiet --frail",
-    "build-crawl": "mkdir -p data && curl http://www.w3.org/TR/html4/sgml/entities.html > data/entities.html",
     "build-generate": "node build",
     "build-bundle": "browserify index.json --bare -s characterEntitiesHTML4 > character-entities-html4.js",
     "build-mangle": "esmangle character-entities-html4.js > character-entities-html4.min.js",
-    "build": "npm run build-md && npm run build-crawl && npm run build-generate && npm run build-bundle && npm run build-mangle",
+    "build": "npm run build-md && npm run build-generate && npm run build-bundle && npm run build-mangle",
     "lint": "xo",
     "test-api": "node test",
     "test-coverage": "nyc --reporter lcov tape test.js",

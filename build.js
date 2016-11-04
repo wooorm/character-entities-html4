@@ -1,30 +1,32 @@
 'use strict';
 
-/* Dependencies. */
 var fs = require('fs');
-var path = require('path');
+var https = require('https');
+var bail = require('bail');
+var concat = require('concat-stream');
 
-/* Read. */
-var doc = fs.readFileSync(path.join('data', 'entities.html'), 'utf8');
+https.get('https://www.w3.org/TR/html4/sgml/entities.html', function (res) {
+  res
+    .pipe(concat(function (data) {
+      var entities = {};
+      var re = /&lt;!ENTITY([\s\S]+?)--&gt;/g;
+      var match = re.exec(data);
 
-/* Transform. */
-var re = /&lt;!ENTITY([\s\S]+?)--&gt;/g;
-var entities = {};
-var match = re.exec(doc);
+      while (match) {
+        match = match[1].split('--', 1)[0].split(/\s+/).filter(Boolean);
 
-while (match) {
-  match = match[1].split('--', 1)[0].split(/\s+/).filter(Boolean);
+        if (match[1] === 'CDATA') {
+          entities[match[0]] = String.fromCharCode(
+            match[2].split('#')[1].split(';')[0]
+          );
+        }
 
-  if (match[1] === 'CDATA') {
-    entities[match[0]] = String.fromCharCode(
-      match[2].split('#')[1].split(';')[0]
-    );
-  }
+        match = re.exec(data);
+      }
 
-  match = re.exec(doc);
-}
+      data = JSON.stringify(entities, 0, 2);
 
-/* Write. */
-entities = JSON.stringify(entities, 0, 2) + '\n';
-
-fs.writeFileSync('index.json', entities);
+      fs.writeFile('index.json', data + '\n', bail);
+    }))
+    .on('error', bail);
+});
