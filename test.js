@@ -1,11 +1,3 @@
-/**
- * @author Titus Wormer
- * @copyright 2015 Titus Wormer
- * @license MIT
- * @module character-entities-html4
- * @fileoverview Test suite for `character-entities-html4`.
- */
-
 'use strict';
 
 /* Dependencies. */
