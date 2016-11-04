@@ -35,4 +35,4 @@ while (match) {
 /* Write. */
 entities = JSON.stringify(entities, 0, 2) + '\n';
 
-fs.writeFileSync(path.join(__dirname, '..', 'index.json'), entities);
+fs.writeFileSync('index.json', entities);
