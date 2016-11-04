@@ -13,15 +13,15 @@
     "name",
     "replacement"
   ],
-  "files": [
-    "index.js",
-    "index.json"
-  ],
   "repository": "https://github.com/wooorm/character-entities-html4",
   "bugs": "https://github.com/wooorm/character-entities-html4/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+  ],
+  "main": "index.json",
+  "files": [
+    "index.json"
   ],
   "dependencies": {},
   "devDependencies": {
@@ -37,7 +37,7 @@
     "build-md": "remark . --quiet --frail",
     "build-crawl": "mkdir -p data && curl http://www.w3.org/TR/html4/sgml/entities.html > data/entities.html",
     "build-generate": "node script/generate.js",
-    "build-bundle": "browserify index.js --bare -s characterEntitiesHTML4 > character-entities-html4.js",
+    "build-bundle": "browserify index.json --bare -s characterEntitiesHTML4 > character-entities-html4.js",
     "build-mangle": "esmangle character-entities-html4.js > character-entities-html4.min.js",
     "build": "npm run build-md && npm run build-crawl && npm run build-generate && npm run build-bundle && npm run build-mangle",
     "lint": "xo",
