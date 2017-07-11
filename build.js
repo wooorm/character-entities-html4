@@ -6,27 +6,27 @@ var bail = require('bail');
 var concat = require('concat-stream');
 
 https.get('https://www.w3.org/TR/html4/sgml/entities.html', function (res) {
-  res
-    .pipe(concat(function (data) {
-      var entities = {};
-      var re = /&lt;!ENTITY([\s\S]+?)--&gt;/g;
-      var match = re.exec(data);
+  res.pipe(concat(onconcat)).on('error', bail);
 
-      while (match) {
-        match = match[1].split('--', 1)[0].split(/\s+/).filter(Boolean);
+  function onconcat(data) {
+    var entities = {};
+    var re = /&lt;!ENTITY([\s\S]+?)--&gt;/g;
+    var match = re.exec(data);
 
-        if (match[1] === 'CDATA') {
-          entities[match[0]] = String.fromCharCode(
-            match[2].split('#')[1].split(';')[0]
-          );
-        }
+    while (match) {
+      match = match[1].split('--', 1)[0].split(/\s+/).filter(Boolean);
 
-        match = re.exec(data);
+      if (match[1] === 'CDATA') {
+        entities[match[0]] = String.fromCharCode(
+          match[2].split('#')[1].split(';')[0]
+        );
       }
 
-      data = JSON.stringify(entities, 0, 2);
+      match = re.exec(data);
+    }
 
-      fs.writeFile('index.json', data + '\n', bail);
-    }))
-    .on('error', bail);
+    data = JSON.stringify(entities, 0, 2);
+
+    fs.writeFile('index.json', data + '\n', bail);
+  }
 });
