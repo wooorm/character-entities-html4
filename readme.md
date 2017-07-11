@@ -4,7 +4,7 @@ HTML4 character entity information.
 
 ## Installation
 
-[npm][npm-install]:
+[npm][]:
 
 ```bash
 npm install character-entities-html4
@@ -13,10 +13,10 @@ npm install character-entities-html4
 ## Usage
 
 ```js
-console.log(characterEntities.AElig); // Æ
-console.log(characterEntities.aelig); // æ
-console.log(characterEntities.amp); // &
-console.log(characterEntities.apos); // undefined
+console.log(characterEntities.AElig); //=> 'Æ'
+console.log(characterEntities.aelig); //=> 'æ'
+console.log(characterEntities.amp); //=> '&'
+console.log(characterEntities.apos); //=> undefined
 ```
 
 ## API
@@ -43,7 +43,7 @@ See [w3.org][html].
 
 [codecov]: https://codecov.io/github/wooorm/character-entities-html4
 
-[npm-install]: https://docs.npmjs.com/cli/install
+[npm]: https://docs.npmjs.com/cli/install
 
 [license]: LICENSE
 
