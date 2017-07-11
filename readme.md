@@ -1,4 +1,4 @@
-# character-entities-html4 [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# character-entities-html4 [![Build Status][travis-badge]][travis]
 
 HTML4 character entity information.
 
@@ -49,10 +49,6 @@ See [w3.org][html].
 [travis-badge]: https://img.shields.io/travis/wooorm/character-entities-html4.svg
 
 [travis]: https://travis-ci.org/wooorm/character-entities-html4
-
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/character-entities-html4.svg
-
-[codecov]: https://codecov.io/github/wooorm/character-entities-html4
 
 [npm]: https://docs.npmjs.com/cli/install
 
