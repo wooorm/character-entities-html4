@@ -29,6 +29,17 @@ Mapping between (case-sensitive) character entity names to replacements.
 
 See [w3.org][html].
 
+## Related
+
+*   [`character-entities`](https://github.com/wooorm/character-entities)
+    — HTML character entity info
+*   [`character-entities-legacy`](https://github.com/wooorm/character-entities-legacy)
+    — Legacy character entity info
+*   [`parse-entities`](https://github.com/wooorm/parse-entities)
+    — Parse HTML character references
+*   [`stringify-entities`](https://github.com/wooorm/stringify-entities)
+    — Stringify HTML character references
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
