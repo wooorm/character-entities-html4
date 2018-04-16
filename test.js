@@ -1,13 +1,13 @@
-'use strict';
+'use strict'
 
-var test = require('tape');
-var characterEntities = require('.');
+var test = require('tape')
+var characterEntities = require('.')
 
-test('characterEntities', function (t) {
-  t.equal(characterEntities.AElig, 'Æ');
-  t.equal(characterEntities.aelig, 'æ');
-  t.equal(characterEntities.amp, '&');
-  t.equal(characterEntities.apos, undefined);
+test('characterEntities', function(t) {
+  t.equal(characterEntities.AElig, 'Æ')
+  t.equal(characterEntities.aelig, 'æ')
+  t.equal(characterEntities.amp, '&')
+  t.equal(characterEntities.apos, undefined)
 
-  t.end();
-});
+  t.end()
+})

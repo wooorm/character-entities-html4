@@ -13,10 +13,12 @@ npm install character-entities-html4
 ## Usage
 
 ```js
-console.log(characterEntities.AElig); //=> 'Æ'
-console.log(characterEntities.aelig); //=> 'æ'
-console.log(characterEntities.amp); //=> '&'
-console.log(characterEntities.apos); //=> undefined
+var characterEntities = require('character-entities-html4')
+
+console.log(characterEntities.AElig) // => 'Æ'
+console.log(characterEntities.aelig) // => 'æ'
+console.log(characterEntities.amp) // => '&'
+console.log(characterEntities.apos) // => undefined
 ```
 
 ## API
