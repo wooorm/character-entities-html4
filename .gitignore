@@ -4,3 +4,4 @@ data/
 node_modules/
 character-entities-html4.js
 character-entities-html4.min.js
+yarn.lock
