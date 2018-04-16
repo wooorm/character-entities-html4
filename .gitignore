@@ -1,6 +1,5 @@
 .DS_Store
 *.log
-data/
 node_modules/
 character-entities-html4.js
 character-entities-html4.min.js
