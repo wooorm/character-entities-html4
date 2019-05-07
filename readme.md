@@ -56,6 +56,6 @@ See [w3.org][html].
 
 [license]: license
 
-[author]: http://wooorm.com
+[author]: https://wooorm.com
 
-[html]: http://www.w3.org/TR/html4/sgml/entities.html
+[html]: https://www.w3.org/TR/html4/sgml/entities.html
