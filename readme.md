@@ -1,4 +1,8 @@
-# character-entities-html4 [![Build Status][travis-badge]][travis]
+# character-entities-html4
+
+[![Build][build-badge]][build]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
 
 HTML4 character entity information.
 
@@ -48,9 +52,17 @@ See [w3.org][html].
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/character-entities-html4.svg
+[build-badge]: https://img.shields.io/travis/wooorm/character-entities-html4.svg
 
-[travis]: https://travis-ci.org/wooorm/character-entities-html4
+[build]: https://travis-ci.org/wooorm/character-entities-html4
+
+[downloads-badge]: https://img.shields.io/npm/dm/character-entities-html4.svg
+
+[downloads]: https://www.npmjs.com/package/character-entities-html4
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/character-entities-html4.svg
+
+[size]: https://bundlephobia.com/result?p=character-entities-html4
 
 [npm]: https://docs.npmjs.com/cli/install
 
