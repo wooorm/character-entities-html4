@@ -37,7 +37,7 @@
   },
   "scripts": {
     "generate": "node build",
-    "format": "remark . -qfo && prettier --write '**/*.js' && xo --fix",
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
     "build-bundle": "browserify index.json --bare -s characterEntitiesHTML4 > character-entities-html4.js",
     "build-mangle": "esmangle character-entities-html4.js > character-entities-html4.min.js",
     "build": "npm run build-bundle && npm run build-mangle",
