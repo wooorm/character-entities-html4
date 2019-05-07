@@ -41,7 +41,6 @@
     "build-bundle": "browserify index.json -s characterEntitiesHTML4 -o character-entities-html4.js",
     "build-mangle": "browserify index.json -s characterEntitiesHTML4 -p tinyify -o character-entities-html4.js",
     "build": "npm run build-bundle && npm run build-mangle",
-    "lint": "xo",
     "test-api": "node test",
     "test": "npm run generate && npm run format && npm run build && npm run test-api"
   },
@@ -56,10 +55,6 @@
   "xo": {
     "prettier": true,
     "esnext": false,
-    "rules": {
-      "no-var": "off",
-      "prefer-arrow-callback": "off"
-    },
     "ignores": [
       "character-entities-html4.js"
     ]
