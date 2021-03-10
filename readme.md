@@ -9,6 +9,9 @@ HTML4 character entity information.
 
 ## Install
 
+This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
+instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -18,17 +21,20 @@ npm install character-entities-html4
 ## Use
 
 ```js
-var characterEntities = require('character-entities-html4')
+import {characterEntitiesHtml4} from 'character-entities-html4'
 
-console.log(characterEntities.AElig) // => 'Æ'
-console.log(characterEntities.aelig) // => 'æ'
-console.log(characterEntities.amp) // => '&'
-console.log(characterEntities.apos) // => undefined
+console.log(characterEntitiesHtml4.AElig) // => 'Æ'
+console.log(characterEntitiesHtml4.aelig) // => 'æ'
+console.log(characterEntitiesHtml4.amp) // => '&'
+console.log(characterEntitiesHtml4.apos) // => undefined
 ```
 
 ## API
 
-### `characterEntitiesHTML4`
+This package exports the following identifiers: `characterEntitiesHtml4`.
+There is no default export.
+
+### `characterEntitiesHtml4`
 
 Mapping between (case-sensitive) character entity names to replacements.
 

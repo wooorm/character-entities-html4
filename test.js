@@ -1,13 +1,11 @@
-'use strict'
+import test from 'tape'
+import {characterEntitiesHtml4} from './index.js'
 
-var test = require('tape')
-var characterEntities = require('.')
-
-test('characterEntities', function (t) {
-  t.equal(characterEntities.AElig, 'Æ')
-  t.equal(characterEntities.aelig, 'æ')
-  t.equal(characterEntities.amp, '&')
-  t.equal(characterEntities.apos, undefined)
+test('characterEntitiesHtml4', function (t) {
+  t.equal(characterEntitiesHtml4.AElig, 'Æ')
+  t.equal(characterEntitiesHtml4.aelig, 'æ')
+  t.equal(characterEntitiesHtml4.amp, '&')
+  t.equal(characterEntitiesHtml4.apos, undefined)
 
   t.end()
 })
