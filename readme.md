@@ -1,6 +1,7 @@
 # character-entities-html4
 
 [![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
@@ -52,9 +53,13 @@ See [`w3.org`][html].
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/character-entities-html4.svg
+[build-badge]: https://github.com/wooorm/character-entities-html4/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/wooorm/character-entities-html4
+[build]: https://github.com/wooorm/character-entities-html4/actions
+
+[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/character-entities-html4.svg
+
+[coverage]: https://codecov.io/github/wooorm/character-entities-html4
 
 [downloads-badge]: https://img.shields.io/npm/dm/character-entities-html4.svg
 
