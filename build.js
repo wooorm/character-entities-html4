@@ -13,13 +13,14 @@ function onconcat(data) {
   var entities = {}
   var re = /&lt;!ENTITY([\s\S]+?)--&gt;/g
   var match = re.exec(data)
+  var list
 
   while (match) {
-    match = match[1].split('--', 1)[0].split(/\s+/).filter(Boolean)
+    list = match[1].split('--', 1)[0].split(/\s+/).filter(Boolean)
 
-    if (match[1] === 'CDATA') {
-      entities[match[0]] = String.fromCharCode(
-        match[2].split('#')[1].split(';')[0]
+    if (list[1] === 'CDATA') {
+      entities[list[0]] = String.fromCharCode(
+        Number(list[2].split('#')[1].split(';')[0])
       )
     }
 
