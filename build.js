@@ -1,6 +1,6 @@
-import fs from 'fs'
-import https from 'https'
-import bail from 'bail'
+import fs from 'node:fs'
+import https from 'node:https'
+import {bail} from 'bail'
 import concat from 'concat-stream'
 
 https.get('https://www.w3.org/TR/html4/sgml/entities.html', onconnection)
@@ -10,10 +10,10 @@ function onconnection(response) {
 }
 
 function onconcat(data) {
-  var entities = {}
-  var re = /&lt;!ENTITY([\s\S]+?)--&gt;/g
-  var match = re.exec(data)
-  var list
+  const entities = {}
+  const re = /&lt;!ENTITY([\s\S]+?)--&gt;/g
+  let match = re.exec(data)
+  let list
 
   while (match) {
     list = match[1].split('--', 1)[0].split(/\s+/).filter(Boolean)
@@ -29,7 +29,7 @@ function onconcat(data) {
 
   fs.writeFile(
     'index.js',
-    'export var characterEntitiesHtml4 = ' +
+    'export const characterEntitiesHtml4 = ' +
       JSON.stringify(entities, null, 2) +
       '\n',
     bail

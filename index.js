@@ -1,4 +1,4 @@
-export var characterEntitiesHtml4 = {
+export const characterEntitiesHtml4 = {
   nbsp: ' ',
   iexcl: '¡',
   cent: '¢',
