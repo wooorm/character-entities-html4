@@ -1,7 +1,7 @@
 {
   "name": "character-entities-html4",
-  "version": "2.0.0",
-  "description": "HTML4 character entity information",
+  "version": "2.1.0",
+  "description": "Map of named character references from HTML 4",
   "license": "MIT",
   "keywords": [
     "html",
