@@ -100,7 +100,7 @@ This package is safe.
     — serialize (encode) character references
 *   [`character-entities`](https://github.com/wooorm/character-entities)
     — info on character entities
-*   [`character-entities-invalid`](https://github.com/wooorm/character-entities-invalid)
+*   [`character-reference-invalid`](https://github.com/wooorm/character-reference-invalid)
     — info on invalid numeric character references
 *   [`character-entities-legacy`](https://github.com/wooorm/character-entities-legacy)
     — info on legacy named character references
