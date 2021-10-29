@@ -7,15 +7,54 @@
 
 Map of named character references from HTML 4.
 
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`characterEntitiesHtml4`](#characterentitieshtml4)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Security](#security)
+*   [Related](#related)
+*   [Contribute](#contribute)
+*   [License](#license)
+
+## What is this?
+
+This is a map of named character references in HTML 4 to the characters they
+represent.
+
+## When should I use this?
+
+Maybe when you’re writing an HTML parser or minifier, but otherwise probably
+never!
+Even then, it might be better to use [`parse-entities`][parse-entities] or
+[`stringify-entities`][stringify-entities].
+
 ## Install
 
-This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
-instead of `require`d.
-
-[npm][]:
+This package is [ESM only][esm].
+In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
 
 ```sh
 npm install character-entities-html4
+```
+
+In Deno with [Skypack][]:
+
+```js
+import {characterEntitiesHtml4} from 'https://cdn.skypack.dev/character-entities-html4@2?dts'
+```
+
+In browsers with [Skypack][]:
+
+```html
+<script type="module">
+  import {characterEntitiesHtml4} from 'https://cdn.skypack.dev/character-entities-html4@2?min'
+</script>
 ```
 
 ## Use
@@ -36,22 +75,40 @@ There is no default export.
 
 ### `characterEntitiesHtml4`
 
-Mapping between (case-sensitive) character entity names to replacements.
+Map of case sensitive named character references from HTML 4.
+See [`w3.org`][html] for more info.
 
-## Support
+## Types
 
-See [`w3.org`][html].
+This package is fully typed with [TypeScript][].
+
+## Compatibility
+
+This package is at least compatible with all maintained versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+It also works in Deno and modern browsers.
+
+## Security
+
+This package is safe.
 
 ## Related
 
-*   [`character-entities`](https://github.com/wooorm/character-entities)
-    — HTML character entity info
-*   [`character-entities-legacy`](https://github.com/wooorm/character-entities-legacy)
-    — Legacy character entity info
 *   [`parse-entities`](https://github.com/wooorm/parse-entities)
-    — Parse HTML character references
+    — parse (decode) character references
 *   [`stringify-entities`](https://github.com/wooorm/stringify-entities)
-    — Stringify HTML character references
+    — serialize (encode) character references
+*   [`character-entities`](https://github.com/wooorm/character-entities)
+    — info on character entities
+*   [`character-entities-invalid`](https://github.com/wooorm/character-entities-invalid)
+    — info on invalid numeric character references
+*   [`character-entities-legacy`](https://github.com/wooorm/character-entities-legacy)
+    — info on legacy named character references
+
+## Contribute
+
+Yes please!
+See [How to Contribute to Open Source][contribute].
 
 ## License
 
@@ -77,8 +134,20 @@ See [`w3.org`][html].
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[skypack]: https://www.skypack.dev
+
 [license]: license
 
 [author]: https://wooorm.com
+
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[typescript]: https://www.typescriptlang.org
+
+[contribute]: https://opensource.guide/how-to-contribute/
+
+[parse-entities]: https://github.com/wooorm/parse-entities
+
+[stringify-entities]: https://github.com/wooorm/stringify-entities
 
 [html]: https://www.w3.org/TR/html4/sgml/entities.html
