@@ -21,7 +21,7 @@ function onconcat(data) {
     const list = match[1].split('--', 1)[0].split(/\s+/).filter(Boolean)
 
     if (list[1] === 'CDATA') {
-      entities[list[0]] = String.fromCharCode(
+      entities[list[0]] = String.fromCodePoint(
         Number(list[2].split('#')[1].split(';')[0])
       )
     }
